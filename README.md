@@ -50,10 +50,8 @@ Now, **whenever `foo` is called**, validation triggers and you can be sure that 
 
 *This package is heavily inspired by the [`pandera`](https://github.com/unionai-oss/pandera) Python package. Pandera is a fantastic Python library for statistical data testing, that offers a lot more functionality than `pandabear`. Consider this a lighter, `pandas`-only version of `pandera`. If you're looking for a more comprehensive solution that supports other backends than just `pandas` (like `spark`, `polars`, etc.), we highly recommend you check it out.*
 
-**See package level [README.md](src/pandabear/README.md) for documentation and usage examples**
-
 ### Usage
-- See the [examples](../../examples) directory for detailed demo
+- See the [examples](https://github.com/Precis-Digital/pandabear/tree/main/examples) directory for detailed demo
 
 ### Installation
 - Install globally or to a given environment:
@@ -66,14 +64,16 @@ Now, **whenever `foo` is called**, validation triggers and you can be sure that 
 - [docker](https://docs.docker.com/get-docker/)
 
 
-## Setup:
+## Contributing
+
+### Setup:
 - Create/activate a virtual environment
 - Run `make help` to see various helper commands to interact with the project
 - Run `make setup` to install dependencies and setup the local package
 - To make commits: run `make commit` or `make commit-all` (adds all changed files to git staged)
 
 
-## Commitizen and Automated Versioning and Changelog
+### Commitizen and Automated Versioning and Changelog
 - A python package must have a version, here we use [semantic versioning](https://semver.org/) format (ex. 1.1.1)
 - Instead of manually bumping a version, this template uses [commitizen](https://commitizen-tools.github.io/commitizen/) to auto-update the package version and auto-generate a CHANGELOG.md
 - This automation is done by parsing commit history as you apply changes, using the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format of commit messages
@@ -93,17 +93,17 @@ gz commit
 ![Commitizen Demo](static/images/commitizen_demo.gif)
 
 
-## Misc.
+### Misc.
 - Author names and emails are specified in [setup.cfg](setup.cfg), the package template initially fills in these values from the git user who created the package, if a user doesn't have a git name specified a placeholder value is used and should be updated.
   - Multiple author names and emails can be specified, as a comma-separated list (ex. `author = John Doe,Jane Doe`)
 - Specifying dependencies:
   - You must specify what dependencies your project needs to work in [setup.cfg (install_requires)](setup.cfg), preferably with wider-scope version constraints (eg. requests>=2.0.0 instead of requests==2.1.3)
 
-## CI/CD:
+### CI/CD:
 GitHub Actions are used to automatically bump the version and update the [CHANGELOG.md](CHANGELOG.md) based on the commit messages since the last version (no action needed to enable or configure, settings in [.github/workflows/bumpversion.yaml](.github/workflows/bumpversion.yaml)).
 Cloud Build is used to automatically package version and publish to PyPI
 
-## Notes / Docs:
+### Notes / Docs:
 - Uses:
     - [pre-commit](https://pre-commit.com/) for Git pre-commit hooks
     - [Black](https://github.com/psf/black) for python code formatting
